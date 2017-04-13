@@ -1,5 +1,14 @@
-<h1>Snippy</h1>
+<nav>
+  <section>
+    <%= link_to 'New', new_snippet_path %>
+  </section>
+</nav>
 
-<% @snippets.each do |snippet| %>
-  <%= render snippet, short: true %>
-<% end %>
+<section>
+  <% @snippets.each do |snippet| %>
+    <article>
+      <%= render snippet, short: true %>
+      <%= link_to 'Edit', edit_snippet_path(snippet) %>
+    </article>
+  <% end %>
+</section>
