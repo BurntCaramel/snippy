@@ -1,8 +1,4 @@
-<nav>
-  <section>
-    <%= link_to 'New', new_snippet_path %>
-  </section>
-</nav>
+<%= render 'nav' %>
 
 <section>
   <% @snippets.each do |snippet| %>

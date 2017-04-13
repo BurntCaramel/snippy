@@ -1,0 +1,13 @@
+<nav>
+  <section>
+    <%= link_to_unless_current 'All', action: :index %> ·
+    <%= link_to_unless_current 'New', action: :new %>
+  </section>
+  <% if local_assigns.include? :snippet %>
+    <section>
+        <%= link_to_unless_current 'View', id: snippet, action: :show %> ·
+        <%= link_to_unless_current 'Edit', id: snippet, action: :edit %> ·
+        <%= link_to 'Delete', snippet, method: :delete, data: { confirm: 'Are your sure you want to delete this snippet?' } %>
+    </section>
+  <% end %>
+</nav>

@@ -1,11 +1,4 @@
-<nav>
-  <section>
-    <%= link_to 'View', @snippet %> ·
-    Edit ·
-    <%= link_to 'Delete', @snippet, method: :delete, data: { confirm: 'Are your sure you want to delete this snippet?' } %> ·
-    <%= link_to 'All', snippets_path %>
-  </section>
-</nav>
+<%= render 'nav', snippet: @snippet %>
 
 <section>
   <%= render 'form', snippet: @snippet %>
