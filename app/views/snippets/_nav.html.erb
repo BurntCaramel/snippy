@@ -1,7 +1,8 @@
 <nav>
   <section>
-    <%= link_to_unless_current 'All', action: :index %> ·
-    <%= link_to_unless_current 'New', action: :new %>
+    <%= link_to_unless_current 'Snippets', action: :index %> ·
+    <%= link_to_unless_current 'Categories', controller: :categories, action: :index %> ·
+    <%= link_to_unless_current 'New snippet', action: :new %>
   </section>
   <% if local_assigns.include? :snippet %>
     <section>

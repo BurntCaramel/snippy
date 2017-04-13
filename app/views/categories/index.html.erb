@@ -1,0 +1,10 @@
+<%= render 'nav' %>
+
+<section>
+  <% @categories.each do |category| %>
+    <article>
+      <h2><%= category.title %></h2>
+      <%= link_to 'Edit', edit_category_path(category) %>
+    </article>
+  <% end %>
+</section>

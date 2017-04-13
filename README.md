@@ -10,8 +10,12 @@
 - SnippetsController
 
 ### Models
+
 #### Snippet
 - title: what this is
 - description: a short description of what this does
 - code: raw code
 - category: e.g. rails, ruby, html, css, scss
+
+#### Category
+- title: e.g. CSS, HTML, Rails, Ruby

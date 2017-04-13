@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+html = Category.create title: 'HTML'
+rails = Category.create title: 'Rails'
+css = Category.create title: 'css'
+
 Snippet.create [
   { title: 'html doctype', code: '<!doctype html>' },
   { title: 'html viewport meta', code: '<meta name="viewport" content="width=device-width, initial-scale=1">' },
