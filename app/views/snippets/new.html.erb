@@ -1,4 +1,8 @@
 <%= form_for(@snippet) do |f| %>
+  <% @snippet.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+
   <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
