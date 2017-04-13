@@ -21,4 +21,8 @@ class SnippetsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @snippet = Snippet.find(params[:id])
+  end
 end
