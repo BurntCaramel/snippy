@@ -14,5 +14,6 @@ brew install postegresql
 mkdir -p ~/db/postgres
 initdb -D ~/db/postgres/data -EUTF-8 --locale=en_US.UTF-8
 ) },
-{ title: 'start postgresql', code: 'pg_ctl start -D ~/db/postgres/data -l ~/db/postgres/postgres.log' }
+  { title: 'start postgresql', code: 'pg_ctl start -D ~/db/postgres/data -l ~/db/postgres/postgres.log' },
+  { title: 'CSS System Font', description: 'Use the system font on whatever the user’s device is. Means nice typography without loading external fonts.', code: 'font-family: system, -apple-system, -webkit-system-font, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Roboto, Arial, freesans, sans-serif;' },
 ]
