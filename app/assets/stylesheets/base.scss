@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-size: 1rem;
+    font-size: inherit;
 }
 
 html {
@@ -25,7 +25,7 @@ h2 {
 a {
     color: inherit;
 }
-pre {
+pre > code {
     overflow: auto;
     padding: 0.5rem;
     max-width: 100%;

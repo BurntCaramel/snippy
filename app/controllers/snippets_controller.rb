@@ -50,6 +50,6 @@ class SnippetsController < ApplicationController
 
     # Get the submitted form data from params
     def snippet_params
-      params.require(:snippet).permit(:title, :description, :code)
+      params.require(:snippet).permit(:title, :description, :code, :category_id)
     end
 end

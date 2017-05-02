@@ -6,18 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-html = Category.create title: 'HTML'
-rails = Category.create title: 'Rails'
-css = Category.create title: 'css'
+html = Category.create! title: 'HTML'
+rails = Category.create! title: 'Rails'
+css = Category.create! title: 'CSS'
+postgresql = Category.create! title: 'PostgreSQL'
 
-Snippet.create [
-  { title: 'html doctype', code: '<!doctype html>' },
-  { title: 'html viewport meta', code: '<meta name="viewport" content="width=device-width, initial-scale=1">' },
-  { title: 'install postgresql mac', code: %(
+Snippet.create! [
+  { title: 'html doctype', category: html, code: '<!doctype html>' },
+  { title: 'html viewport meta', category: html, code: '<meta name="viewport" content="width=device-width, initial-scale=1">' },
+  { title: 'install postgresql mac', category: postgresql, code: %(
 brew install postegresql
 mkdir -p ~/db/postgres
 initdb -D ~/db/postgres/data -EUTF-8 --locale=en_US.UTF-8
 ) },
-  { title: 'start postgresql', code: 'pg_ctl start -D ~/db/postgres/data -l ~/db/postgres/postgres.log' },
-  { title: 'CSS System Font', description: 'Use the system font on whatever the user’s device is. Means nice typography without loading external fonts.', code: 'font-family: system, -apple-system, -webkit-system-font, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Roboto, Arial, freesans, sans-serif;' },
+  { title: 'start postgresql', category: postgresql, code: 'pg_ctl start -D ~/db/postgres/data -l ~/db/postgres/postgres.log' },
+  { title: 'CSS System Font', category: css, description: 'Use the system font on whatever the user’s device is. Means nice typography without loading external fonts.', code: 'font-family: system, -apple-system, -webkit-system-font, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Roboto, Arial, freesans, sans-serif;' },
 ]

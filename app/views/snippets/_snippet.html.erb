@@ -1,9 +1,14 @@
 <% short = local_assigns.fetch(:short, false) %>
 
 <div>
-  <h2><%= snippet.title %></h2>
+  <h2><%= link_to snippet.title, snippet %></h2>
+  <h3>
+    <%= short ? '' : 'Category: ' %>
+    <%= link_to snippet.category.try(:title), snippet.category %>
+  </h3>
   <% unless short %>
     <%= simple_format snippet.description %>
+    <h3>Code:</h3>
   <% end %>
-  <pre><%= snippet.code %></pre>
+  <pre><code><%= snippet.code %></code></pre>
 </div>
