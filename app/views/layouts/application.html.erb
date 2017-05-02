@@ -9,7 +9,11 @@
 
     <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js' %>
     <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/monokai-sublime.min.css' %>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+      document.addEventListener("turbolinks:load", function() {
+        $('pre code').each(function(i, e) { hljs.highlightBlock(e) });
+      })
+    </script>
   </head>
 
   <body>
