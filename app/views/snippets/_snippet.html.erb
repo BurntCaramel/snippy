@@ -2,10 +2,12 @@
 
 <div>
   <h2><%= link_to snippet.title, snippet %></h2>
-  <h3>
-    <%= short ? '' : 'Category: ' %>
-    <%= link_to snippet.category.try(:title), snippet.category %>
-  </h3>
+  <% if snippet.category.present? %>
+    <h3>
+      <%= short ? '' : 'Category: ' %>
+      <%= link_to snippet.category.try(:title), snippet.category %>
+    </h3>
+  <% end %>
   <% unless short %>
     <%= simple_format snippet.description %>
     <h3>Code:</h3>

@@ -2,7 +2,12 @@ class SnippetsController < ApplicationController
   before_action :set_snippet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @snippets = Snippet.all
+    @query = params[:q]
+    if @query.blank?
+      @snippets = Snippet.all.includes(:category)
+    else
+      @snippets = Snippet.search(@query)
+    end
   end
 
   def new

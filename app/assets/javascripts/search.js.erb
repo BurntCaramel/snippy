@@ -1,0 +1,23 @@
+var client = algoliasearch('<%= ENV.fetch('ALGOLIA_APPLICATION_ID') %>', '<%= ENV.fetch('ALGOLIA_API_SEARCH_KEY') %>');
+var index = client.initIndex('Snippet');
+<%#index.search('something', { hitsPerPage: 10, page: 0 })
+  .then(function searchDone(content) {
+    console.log(content)
+  })
+  .catch(function searchFailure(err) {
+    console.error(err);
+  });%>
+
+<%#function applySearchResults(results) {
+
+  $('.snippet').each(function(index, el) {
+    var $snippet = $(el)
+    $snippet.toggle($snippet)
+  })
+}
+
+$(document).on('change', '.snippets-search-field', function(event) {
+  index.search('html', function(err, content) {
+    console.log(content.hits);
+  });
+})%>

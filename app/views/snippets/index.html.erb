@@ -1,9 +1,23 @@
 <%= render 'nav' %>
 
 <section>
-  <% @snippets.each do |snippet| %>
-    <article>
-      <%= render snippet, short: true %>
-    </article>
+  <%= form_tag './', method: :get do %>
+    <% search_field_tag :q, @query, placeholder: 'Search' %>
+  <% end %>
+</section>
+
+<section>
+  <% if @snippets.empty? %>
+    <% if @query.present? %>
+      <h2>No snippets found for '<%= @query %>'</h2>
+    <% else %>
+      <h2>No snippets</h2>
+    <% end %>
+  <% else %>
+    <% @snippets.each do |snippet| %>
+      <article>
+        <%= render snippet, short: true %>
+      </article>
+    <% end %>
   <% end %>
 </section>
