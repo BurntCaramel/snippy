@@ -3,3 +3,11 @@
 <section>
   <h1><%= @category.title %></h1>
 </section>
+
+<section>
+  <% @category.snippets.each do |snippet| %>
+    <article>
+      <%= render snippet, short: true %>
+    </article>
+  <% end %>
+</section>

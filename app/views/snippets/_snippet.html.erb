@@ -11,4 +11,7 @@
     <h3>Code:</h3>
   <% end %>
   <pre><code><%= snippet.code %></code></pre>
+  <% if short %>
+    <%= link_to 'Edit', edit_snippet_path(snippet) %>
+  <% end %>
 </div>

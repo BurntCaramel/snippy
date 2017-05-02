@@ -4,7 +4,6 @@
   <% @snippets.each do |snippet| %>
     <article>
       <%= render snippet, short: true %>
-      <%= link_to 'Edit', edit_snippet_path(snippet) %>
     </article>
   <% end %>
 </section>
